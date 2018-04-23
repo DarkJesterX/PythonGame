@@ -177,10 +177,10 @@ while not game.over:
         traps2[index].moveTo(r, 450)
         trapsPassed +=1
 
-    if trapsPassed >= 15:
+    if trapsPassed >= 5:
         icicles[index].move ()
 
-    if trapsPassed >= 5:
+    if Icicles >= 5:
         bat[index].move ()
 
     x = randint (-75, -50)
@@ -231,7 +231,7 @@ while not game.over:
         game.over = True
 
 
-    if trapsPassed >= 30 and Icicles >= 15 and Bat >= 30:
+    if trapsPassed >= 10 and Icicles >= 10 and Bat >= 10:
         traps[index].visible = False
         traps2[index].visible = False
         icicles[index].visible = False
@@ -267,7 +267,7 @@ while not game.over:
     if keys.Pressed[K_SPACE] and not jumping:
         jumping = True
             
-    if not onrock and jumping:
+    if jumping:
         explorer.y -= 10
 
     if not jumping:
@@ -284,7 +284,7 @@ while not game.over:
         explorer.prevFrame ()
         explorer.x -= 6
 
-
+ 
     explorer.draw ()
 
   
